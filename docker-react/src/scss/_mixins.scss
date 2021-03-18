@@ -1,0 +1,51 @@
+$global-prefixes: webkit moz ms o;
+@mixin prefixer($prop, $val, $prefixes: null) {
+  @if $prefixes == null {
+    @each $prefix in $global-prefixes {
+      -#{ $prefix }-#{ $prop }: $val;
+    }
+  } @else {
+    @each $prefix in $prefixes {
+      -#{ $prefix }-#{ $prop }: $val;
+    }
+  }
+
+  #{ $prop }: $val;
+}
+
+@mixin keyframes($name) {
+  @-webkit-keyframes #{$name} {
+    @content;
+  }
+
+  @-moz-keyframes #{$name} {
+    @content;
+  }
+
+  @keyframes #{$name} {
+    @content;
+  }
+}
+
+@mixin media($width) {
+  @media only screen and (max-width: $width) {
+    @content;
+  }
+}
+
+@mixin media-between($width, $maxwidth) {
+  @media (min-width: $width) and (max-width: $maxwidth) {
+    @content;
+  }
+}
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key($breakpoints, $breakpoint) {
+    @media (min-width: #{map-get($breakpoints, $breakpoint)}) {
+      @content;
+    }
+  } @else {
+    @warn "Unfortunately, no value could be retrieved from `#{$breakpoint}`. "
+            + "Please make sure it is defined in `$breakpoints` map.";
+  }
+}

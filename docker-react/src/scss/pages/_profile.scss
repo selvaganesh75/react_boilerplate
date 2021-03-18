@@ -1,0 +1,131 @@
+// add something do it here
+
+.profile-content {
+  .card {
+    border-radius: 12px;
+    box-shadow: 0 6px 10px -4px rgba(0, 0, 0, 0.15);
+    background-color: #fff;
+    color: #252422;
+    margin-bottom: 20px;
+    position: relative;
+    border: 0;
+    -webkit-transition: transform 0.3s cubic-bezier(0.34, 2, 0.6, 1),
+      box-shadow 0.2s ease;
+    -webkit-transition: box-shadow 0.2s ease,
+      -webkit-transform 0.3s cubic-bezier(0.34, 2, 0.6, 1);
+    transition: box-shadow 0.2s ease,
+      -webkit-transform 0.3s cubic-bezier(0.34, 2, 0.6, 1);
+    transition: transform 0.3s cubic-bezier(0.34, 2, 0.6, 1),
+      box-shadow 0.2s ease;
+    transition: transform 0.3s cubic-bezier(0.34, 2, 0.6, 1),
+      box-shadow 0.2s ease, -webkit-transform 0.3s cubic-bezier(0.34, 2, 0.6, 1);
+  }
+
+  img {
+    max-width: 100%;
+  }
+  .card {
+    .image {
+      overflow: hidden;
+      height: 200px;
+      position: relative;
+    }
+    .avatar {
+      width: 30px;
+      height: 30px;
+      overflow: hidden;
+      border-radius: 50%;
+      margin-bottom: 15px;
+    }
+  }
+
+  .card-user {
+    .image {
+      height: 130px;
+      img {
+        border-radius: 12px;
+      }
+    }
+
+    .author {
+      text-align: center;
+      text-transform: none;
+      margin-top: -77px;
+      .title {
+        font-weight: 700;
+        font-size: 1.57em;
+        line-height: 1.4em;
+        margin-bottom: 15px;
+      }
+    }
+    .author a + p.description {
+      margin-top: -7px;
+    }
+
+    .avatar {
+      width: 124px;
+      height: 124px;
+      border: 1px solid #ffffff;
+      position: relative;
+
+      .profile-edit {
+        display: none;
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        align-items: center;
+        justify-content: center;
+        font-size: 25px;
+        color: #fff;
+        background: rgba(83, 80, 80, 0.74);
+      }
+      &:hover .profile-edit {
+        display: flex;
+      }
+    }
+
+    .card-body {
+      min-height: 240px;
+    }
+
+    hr {
+      margin: 5px 15px 15px;
+      border: transparent;
+    }
+
+    .card-body + .card-footer {
+      padding-top: 0;
+      background-color: inherit;
+    }
+
+    .card-footer h5 {
+      font-size: 1.25em;
+      margin-bottom: 0;
+    }
+
+    .button-container {
+      margin-bottom: 6px;
+      text-align: center;
+    }
+    p.description {
+      font-size: 1.14em;
+      color: #9a9a9a;
+      font-weight: 300;
+    }
+  }
+
+  @media screen and (max-width: 768px) {
+    .main-panel .content {
+      padding-left: 15px;
+      padding-right: 15px;
+    }
+  }
+}
+
+.main-panel > .content {
+  padding: 0 30px 30px;
+  min-height: calc(100vh - 123px);
+  margin-top: 93px;
+}
